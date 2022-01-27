@@ -19,9 +19,11 @@ const Notepad = () => {
 				<AppDate />
 			</header>
 			<InputArea onAdd={addToDoItem} />
-			{toDoItems.map((item, index) => {
-				return <ToDoList id={index} toDoItem={item} />;
-			})}
+			<ul>
+				{toDoItems.map((item, index) => {
+					return <ToDoList id={index} toDoItem={item} />;
+				})}
+			</ul>
 		</div>
 	);
 };
