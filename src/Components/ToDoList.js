@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 
-const ToDoList = ({ index, id, toDoItem }) => {
+const ToDoList = ({ index, id, toDoItem, onDelete }) => {
 	const [isFinished, setIsFinished] = useState(false);
 
 	const addLineThrough = () => {
@@ -11,7 +11,10 @@ const ToDoList = ({ index, id, toDoItem }) => {
 
 	return (
 		<div key={index} className="ToDoList" onClick={addLineThrough}>
-			<li style={{ textDecoration: isFinished ? "line-through" : "none" }}>
+			<li
+				onDoubleClick={() => onDelete(id)}
+				style={{ textDecoration: isFinished ? "line-through" : "none" }}
+			>
 				{toDoItem}
 			</li>
 		</div>

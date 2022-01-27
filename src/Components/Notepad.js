@@ -13,6 +13,14 @@ const Notepad = () => {
 		});
 	}
 
+	function deleteItem(id) {
+		setToDoItems((prevItems) => {
+			return toDoItems.filter((item, index) => {
+				return index !== id;
+			});
+		});
+	}
+
 	return (
 		<div className="Notepad">
 			<header>
@@ -21,7 +29,7 @@ const Notepad = () => {
 			<InputArea onAdd={addToDoItem} />
 			<ul>
 				{toDoItems.map((item, index) => {
-					return <ToDoList id={index} toDoItem={item} />;
+					return <ToDoList onDelete={deleteItem} id={index} toDoItem={item} />;
 				})}
 			</ul>
 		</div>
