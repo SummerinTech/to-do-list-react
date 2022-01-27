@@ -1,8 +1,8 @@
 import React from "react";
 
-const ToDoList = ({ key, id, toDoItem }) => {
+const ToDoList = ({ index, id, toDoItem }) => {
 	return (
-		<div className="ToDoList">
+		<div key={index} className="ToDoList">
 			<li>{toDoItem}</li>
 		</div>
 	);

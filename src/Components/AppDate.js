@@ -1,5 +1,4 @@
 import React from "react";
-import "../App.css";
 
 const AppDate = () => {
 	let date = new Date();
@@ -23,7 +22,9 @@ const AppDate = () => {
 
 	return (
 		<div className="AppDate">
-			{month} {day}, {year}
+			<div className="date">
+				{month} {day}, {year}
+			</div>
 		</div>
 	);
 };

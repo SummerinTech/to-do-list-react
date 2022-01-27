@@ -15,10 +15,12 @@ const Notepad = () => {
 
 	return (
 		<div className="Notepad">
-			<AppDate />
+			<header>
+				<AppDate />
+			</header>
 			<InputArea onAdd={addToDoItem} />
 			{toDoItems.map((item, index) => {
-				return <ToDoList key={index} id={index} toDoItem={item} />;
+				return <ToDoList id={index} toDoItem={item} />;
 			})}
 		</div>
 	);
